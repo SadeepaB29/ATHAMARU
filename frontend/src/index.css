@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -108,4 +110,22 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+@theme {
+  --color-primary: #163D3B;
+  --color-primary-dark: #0F2E2C;
+  --color-accent: #B96C4A;
+  --color-accent-dark: #8B452D;
+  --color-bg: #EEECE5;
+  --color-surface: #F5F0E8;
+  --color-surface-alt: #B8CEC5;
+  --color-ink: #25302D;
+  --color-ink-muted: #5D6863;
+  --color-line: #D4D8D0;
+  --color-line-input: #73847C;
+  --color-success: #28734D;
+  --color-warning: #D5A43B;
+  --color-danger: #B43D3D;
+  --font-sans: "Inter", "Noto Sans Sinhala", system-ui, sans-serif;
 }
