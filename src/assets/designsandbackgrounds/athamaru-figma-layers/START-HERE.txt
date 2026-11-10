@@ -1,0 +1,33 @@
+ATHAMARU • FIGMA LAYERS
+
+Open the folder for your page. preview-assembled.jpg shows the actual
+PNG layers stacked together. The numbered PNGs are the editable pieces.
+
+ALIGN THE LAYERS
+1. Create a frame with the original dimensions below.
+2. Import the numbered PNGs as separate images inside the frame.
+3. Give every PNG the same W and H as the frame. Set X = 0 and Y = 0
+   relative to the frame for each one.
+4. Stack the numbered files from lowest at the bottom to highest at
+   the top. Keep the transparent padding around each image. That padding
+   preserves each piece's original position.
+
+PAGE               ORIGINAL FRAME       PNG SIZE
+Landing            2048 × 682           4096 × 1364
+Marketplace home   2048 × 682           4096 × 1364
+Sign-in            1254 × 1254          2508 × 2508
+Create account     1086 × 1448          2172 × 2896
+
+WHAT'S SEPARATE
+Landing: large glass behind the objects, small glass in front of the
+chair, and the objects and stone table in one layer.
+Marketplace home: full-width sea-glass background, copper-stapled
+crack, and the objects and stone table in one layer.
+Sign-in: top-left glass, bottom-right glass, and the objects and wood
+table in one layer.
+Create account: top-left glass, rounded glass behind the objects,
+and the objects and wood table in one layer.
+
+The PNGs are lossless 2× exports in sRGB. The originals are SDR JPEGs.
+Parts hidden by another piece were reconstructed from the surrounding
+artwork. Pieces that run off the outside edge retain the source frame.
