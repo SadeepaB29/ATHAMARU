@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './App.css';
+import Welcome from './Welcome';
 
 export default function App() {
   const [step, setStep] = useState(1);
+  const [showWelcome, setShowWelcome] = useState(true);
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -24,6 +26,10 @@ export default function App() {
     alert("Welcome to Athamaru! Registration completed successfully.");
     window.location.reload();
   };
+
+  if (showWelcome) {
+    return <Welcome />;
+  }
 
   return (
     <div className="min-h-screen bg-emerald-950 flex items-center justify-center p-4 font-sans w-full">
