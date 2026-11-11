@@ -14,3 +14,7 @@ app.add_middleware(
 @app.get("/api/v1/health")
 def health():
     return {"status": "ok"}
+
+@app.get("/")
+def read_root():
+    return {"message": "ATHAMARU Backend API is running"}
