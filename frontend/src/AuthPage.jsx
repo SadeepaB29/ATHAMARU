@@ -10,8 +10,8 @@ import {
 import './AuthPage.css';
 
 import athamaruLogo from './assets/designsandbackgrounds/athamaru logo with transparent background.png';
-import signInArtwork from './assets/designsandbackgrounds/athamaru-figma-layers/sign-in/preview-assembled.jpg';
-import signUpArtwork from './assets/designsandbackgrounds/athamaru-figma-layers/create-account/preview-assembled.jpg';
+import signInArtwork from './assets/designsandbackgrounds/athamaru-sign-in-background.jpg';
+import signUpArtwork from './assets/designsandbackgrounds/athamaru-create-account-background.jpg';
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
