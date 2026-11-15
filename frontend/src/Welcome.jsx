@@ -1,6 +1,6 @@
 import React from 'react';
 import './Welcome.css';
-import athamaruLogo from './assets/designsandbackgrounds/athamaru logo with transparent background.png';
+import athamaruLogo from './assets/designsandbackgrounds/Athamaru logo with transparent background.png';
 import { Recycle, UsersRound, Leaf } from 'lucide-react';
 export default function Welcome({ onGetStarted }) {
     return (
