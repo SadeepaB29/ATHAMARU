@@ -28,10 +28,6 @@ export default function App() {
     setAuthScreen(nextScreen);
   };
 
-  if (authScreen !== 'welcome') {
-    return <AuthPage mode={authScreen} onNavigate={navigate} />;
-  }
-
   const [step, setStep] = useState(1);
   const [showWelcome, setShowWelcome] = useState(true);
   const [formData, setFormData] = useState({
@@ -41,6 +37,10 @@ export default function App() {
     location: 'Colombo',
     interest: 'Thrift (Buy pre-owned goods)'
   });
+
+  if (authScreen !== 'welcome') {
+    return <AuthPage mode={authScreen} onNavigate={navigate} />;
+  }
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
