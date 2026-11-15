@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowRight, Eye, EyeOff, LockKeyhole, Mail, UserRound } from 'lucide-react';
 import './AuthPage.css';
 import athamaruLogo from './assets/designsandbackgrounds/Athamaru logo with transparent background.png';
+import athamaruMark from './assets/designsandbackgrounds/Athamaru logo without name.png';
 import googleLogo from './assets/Google.png';
 import signInBackdrop from './assets/designsandbackgrounds/athamaru-figma-layers/sign-in/01-clean-teal-backdrop.png';
 import signInGlassTop from './assets/designsandbackgrounds/Sign In/02-glass-top-left 1.png';
@@ -29,7 +30,7 @@ function Brand({ layout = 'signin', onClick }) {
     >
       {layout === 'signup' ? (
         <>
-          <span className="auth-brand-mark"><img src={athamaruLogo} alt="" /></span>
+          <span className="auth-brand-mark"><img src={athamaruMark} alt="" /></span>
           <span className="auth-brand-word">athamaru</span>
         </>
       ) : (
