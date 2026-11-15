@@ -30,7 +30,7 @@ function Brand({ layout = 'signin', onClick }) {
       {layout === 'signup' ? (
         <>
           <span className="auth-brand-mark"><img src={athamaruLogo} alt="" /></span>
-          <span className="auth-brand-word">atham aru</span>
+          <span className="auth-brand-word">athamaru</span>
         </>
       ) : (
         <img src={athamaruLogo} alt="ATHAMARU" />
