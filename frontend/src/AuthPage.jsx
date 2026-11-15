@@ -11,8 +11,14 @@ import './AuthPage.css';
 
 import athamaruLogo from './assets/designsandbackgrounds/Athamaru logo with transparent background.png';
 import googleLogo from './assets/designsandbackgrounds/google-g.svg';
-import signInArtwork from './assets/designsandbackgrounds/Backgrounds/sign-in-left-background-2x.jpg';
-import signUpArtwork from './assets/designsandbackgrounds/Backgrounds/create-account-left-background-2x.jpg';
+import signInBackdrop from './assets/designsandbackgrounds/athamaru-figma-layers/sign-in/01-clean-teal-backdrop.png';
+import signInGlassTop from './assets/designsandbackgrounds/athamaru-figma-layers/sign-in/02-glass-top-left.png';
+import signInObjects from './assets/designsandbackgrounds/athamaru-figma-layers/sign-in/03-objects-and-wood-table.png';
+import signInGlassBottom from './assets/designsandbackgrounds/athamaru-figma-layers/sign-in/04-glass-bottom-right.png';
+import signUpBackdrop from './assets/designsandbackgrounds/athamaru-figma-layers/create-account/01-clean-teal-backdrop.png';
+import signUpGlassTop from './assets/designsandbackgrounds/athamaru-figma-layers/create-account/02-glass-top-left.png';
+import signUpGlassBehind from './assets/designsandbackgrounds/athamaru-figma-layers/create-account/03-round-glass-behind-objects.png';
+import signUpObjects from './assets/designsandbackgrounds/athamaru-figma-layers/create-account/04-objects-and-wood-table.png';
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -70,6 +76,37 @@ function GoogleButton({ onClick }) {
   );
 }
 
+function ArtworkLayers({ mode }) {
+  const layers = mode === 'signup'
+    ? [
+        { src: signUpBackdrop, name: 'Teal textured backdrop' },
+        { src: signUpGlassTop, name: 'Top-left glass detail' },
+        { src: signUpGlassBehind, name: 'Decorative glass behind objects' },
+        { src: signUpObjects, name: 'Plant, books, camera, headphones and wooden table' },
+      ]
+    : [
+        { src: signInBackdrop, name: 'Teal textured backdrop' },
+        { src: signInGlassTop, name: 'Top-left glass detail' },
+        { src: signInObjects, name: 'Camera, books, headphones and wooden table' },
+        { src: signInGlassBottom, name: 'Bottom-right glass detail' },
+      ];
+
+  return (
+    <div className={`auth-art-layer-stack auth-art-layer-stack-${mode}`} aria-hidden="true">
+      {layers.map((layer, index) => (
+        <img
+          className="auth-art-layer"
+          key={layer.name}
+          src={layer.src}
+          alt=""
+          draggable="false"
+          style={{ zIndex: index }}
+        />
+      ))}
+    </div>
+  );
+}
+
 export default function AuthPage({ mode = 'signin', onNavigate }) {
   const isSignUp = mode === 'signup';
   const [values, setValues] = useState({
@@ -118,11 +155,8 @@ export default function AuthPage({ mode = 'signin', onNavigate }) {
 
   return (
     <main className={`auth-page ${isSignUp ? 'auth-page-signup' : 'auth-page-signin'}`}>
-      <section
-        className="auth-art-panel"
-        style={{ backgroundImage: `url("${isSignUp ? signUpArtwork : signInArtwork}")` }}
-        aria-label="ATHAMARU marketplace"
-      >
+      <section className="auth-art-panel" aria-label="ATHAMARU marketplace">
+        <ArtworkLayers mode={isSignUp ? 'signup' : 'signin'} />
         {isSignUp ? (
           <>
             <Brand layout="signup" onClick={() => onNavigate('welcome')} />
