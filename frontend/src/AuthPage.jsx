@@ -74,7 +74,7 @@ export default function AuthPage({ mode = 'signin', onNavigate }) {
     }
     if (!values.password) {
       next.password = 'Please enter your password.';
-    } else if (values.password.length < 8) {
+    } else if (isSignUp && values.password.length < 8) {
       next.password = 'Your password must be at least 8 characters.';
     }
     if (isSignUp && values.confirmPassword !== values.password) {
