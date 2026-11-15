@@ -1,6 +1,7 @@
 import React from 'react';
 import './Welcome.css';
 import athamaruLogo from './assets/designsandbackgrounds/athamaru logo with transparent background.png';
+import { Recycle, UsersRound, Leaf } from 'lucide-react';
 export default function Welcome() {
     return (
         <main className="welcome-page">
@@ -31,21 +32,21 @@ export default function Welcome() {
                 <div className="welcome-benefits">
 
                     <div className="benefit">
-                        <span className="benefit-icon">♻</span>
+                        <Recycle className="benefit-icon" />
                         <span>Extend<br />product life</span>
                     </div>
 
                     <div className="benefit-divider"></div>
 
                     <div className="benefit">
-                        <span className="benefit-icon">♧</span>
+                        <UsersRound className="benefit-icon" />
                         <span>Make it more<br />affordable</span>
                     </div>
 
                     <div className="benefit-divider"></div>
 
                     <div className="benefit">
-                        <span className="benefit-icon">♧</span>
+                        <Leaf className="benefit-icon" />
                         <span>Reduce<br />waste together</span>
                     </div>
 

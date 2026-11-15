@@ -123,7 +123,11 @@
 }
 
 .benefit-icon {
-    font-size: 34px;
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    stroke-width: 1.6;
+    color: #f5f0e8;
 }
 
 .benefit-divider {
@@ -147,6 +151,7 @@
     .welcome-tagline {
         font-size: 19px;
         margin-bottom: 28px;
+        margin: -20px 0 35px;
     }
 
     .get-started-btn {
