@@ -27,7 +27,14 @@ function Brand({ layout = 'signin', onClick }) {
       }}
       aria-label="ATHAMARU home"
     >
-      <img src={athamaruLogo} alt="ATHAMARU" />
+      {layout === 'signup' ? (
+        <>
+          <span className="auth-brand-mark"><img src={athamaruLogo} alt="" /></span>
+          <span className="auth-brand-word">atham aru</span>
+        </>
+      ) : (
+        <img src={athamaruLogo} alt="ATHAMARU" />
+      )}
     </a>
   );
 }
