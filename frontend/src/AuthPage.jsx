@@ -9,7 +9,7 @@ import {
 } from 'lucide-react';
 import './AuthPage.css';
 
-import athamaruLogo from './assets/designsandbackgrounds/athamaru logo with transparent background.png';
+import athamaruLogo from './assets/designsandbackgrounds/Athamaru logo with transparent background.png';
 import signInArtwork from './assets/designsandbackgrounds/athamaru-sign-in-background.jpg';
 import signUpArtwork from './assets/designsandbackgrounds/athamaru-create-account-background.jpg';
 
