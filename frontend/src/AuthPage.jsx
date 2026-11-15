@@ -1,24 +1,18 @@
 import React, { useState } from 'react';
-import {
-  ArrowRight,
-  Eye,
-  EyeOff,
-  LockKeyhole,
-  Mail,
-  UserRound,
-} from 'lucide-react';
+import { ArrowRight, Eye, EyeOff, LockKeyhole, Mail, UserRound } from 'lucide-react';
 import './AuthPage.css';
-
 import athamaruLogo from './assets/designsandbackgrounds/Athamaru logo with transparent background.png';
-import googleLogo from './assets/designsandbackgrounds/google-g.svg';
+import googleLogo from './assets/Google.png';
 import signInBackdrop from './assets/designsandbackgrounds/athamaru-figma-layers/sign-in/01-clean-teal-backdrop.png';
-import signInGlassTop from './assets/designsandbackgrounds/athamaru-figma-layers/sign-in/02-glass-top-left.png';
-import signInObjects from './assets/designsandbackgrounds/athamaru-figma-layers/sign-in/03-objects-and-wood-table.png';
-import signInGlassBottom from './assets/designsandbackgrounds/athamaru-figma-layers/sign-in/04-glass-bottom-right.png';
+import signInGlassTop from './assets/designsandbackgrounds/Sign In/02-glass-top-left 1.png';
+import signInObjects from './assets/designsandbackgrounds/Sign In/03-objects-and-wood-table 1.png';
+import signInGlassBottom from './assets/designsandbackgrounds/Sign In/04-glass-bottom-right 1.png';
 import signUpBackdrop from './assets/designsandbackgrounds/athamaru-figma-layers/create-account/01-clean-teal-backdrop.png';
-import signUpGlassTop from './assets/designsandbackgrounds/athamaru-figma-layers/create-account/02-glass-top-left.png';
-import signUpGlassBehind from './assets/designsandbackgrounds/athamaru-figma-layers/create-account/03-round-glass-behind-objects.png';
-import signUpObjects from './assets/designsandbackgrounds/athamaru-figma-layers/create-account/04-objects-and-wood-table.png';
+import signUpGlassTop from './assets/designsandbackgrounds/Sign Up/Copper-stitched frosted sea glass 1.png';
+import signUpGlassLeftBack from './assets/designsandbackgrounds/Sign Up/Copper-stitched frosted sea glass 2.png';
+import signUpGlassLeftFront from './assets/designsandbackgrounds/Sign Up/Copper-stitched frosted sea glass 3.png';
+import signUpGlassRight from './assets/designsandbackgrounds/Sign Up/Pale Sea Glass Arc Segment-3 1.png';
+import signUpObjects from './assets/designsandbackgrounds/Sign Up/Vintage camera, books, plant, and headphones 1.png';
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -77,32 +71,22 @@ function GoogleButton({ onClick }) {
 }
 
 function ArtworkLayers({ mode }) {
-  const layers = mode === 'signup'
-    ? [
-        { src: signUpBackdrop, name: 'Teal textured backdrop' },
-        { src: signUpGlassTop, name: 'Top-left glass detail' },
-        { src: signUpGlassBehind, name: 'Decorative glass behind objects' },
-        { src: signUpObjects, name: 'Plant, books, camera, headphones and wooden table' },
-      ]
-    : [
-        { src: signInBackdrop, name: 'Teal textured backdrop' },
-        { src: signInGlassTop, name: 'Top-left glass detail' },
-        { src: signInObjects, name: 'Camera, books, headphones and wooden table' },
-        { src: signInGlassBottom, name: 'Bottom-right glass detail' },
-      ];
-
+  if (mode === 'signup') return (
+    <div className="auth-art-layer-stack auth-art-layer-stack-signup" aria-hidden="true">
+      <img className="auth-art-layer auth-art-backdrop" src={signUpBackdrop} alt="" />
+      <img className="auth-signup-glass auth-signup-glass-top" src={signUpGlassTop} alt="" />
+      <img className="auth-signup-glass auth-signup-glass-left-back" src={signUpGlassLeftBack} alt="" />
+      <img className="auth-signup-glass auth-signup-glass-right" src={signUpGlassRight} alt="" />
+      <img className="auth-signup-objects" src={signUpObjects} alt="" />
+      <img className="auth-signup-glass auth-signup-glass-left-front" src={signUpGlassLeftFront} alt="" />
+    </div>
+  );
   return (
-    <div className={`auth-art-layer-stack auth-art-layer-stack-${mode}`} aria-hidden="true">
-      {layers.map((layer, index) => (
-        <img
-          className="auth-art-layer"
-          key={layer.name}
-          src={layer.src}
-          alt=""
-          draggable="false"
-          style={{ zIndex: index }}
-        />
-      ))}
+    <div className="auth-art-layer-stack auth-art-layer-stack-signin" aria-hidden="true">
+      <img className="auth-art-layer auth-art-backdrop" src={signInBackdrop} alt="" />
+      <img className="auth-art-layer" src={signInGlassTop} alt="" />
+      <img className="auth-art-layer" src={signInObjects} alt="" />
+      <img className="auth-art-layer" src={signInGlassBottom} alt="" />
     </div>
   );
 }

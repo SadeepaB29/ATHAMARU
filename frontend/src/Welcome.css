@@ -1,180 +1,19 @@
-
-/* Main welcome page */
-
-.welcome-page {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-
-    background-color: #073f3d;
-    background-image:
-            linear-gradient(rgba(0, 48, 46, 0.12), rgba(0, 48, 46, 0.12)),
-            url('./assets/designsandbackgrounds/athamaru-welcome-background.jpg');
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    color: #f5f0e8;
-    font-family: 'Inter', sans-serif;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-/* Main content */
-
-.welcome-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 35px 20px;
-    width: 100%;
-    max-width: 1000px;
-    min-height: 90vh;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
-
-/* Logo */
-
-.welcome-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 0;
-}
-
-.welcome-logo-image {
-    width: 420px;
-    max-width: 85vw;
-    height: auto;
-    object-fit: contain;
-    display: block;
-}
-
-/* Tagline */
-
-.welcome-tagline {
-    font-size: 28px;
-    font-weight: 500;
-    margin: 0 0 35px;
-    color: #f5f0e8;
-    line-height: 1.4;
-}
-
-.welcome-tagline span {
-    color: #c76e4c;
-}
-
-/* Get started button */
-
-.get-started-btn {
-    width: 240px;
-    min-height: 58px;
-    padding: 14px 25px;
-    border: 1.5px solid #f5f0e8;
-    border-radius: 40px;
-    background: transparent;
-    color: #f5f0e8;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    font-size: 19px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.get-started-btn:hover {
-    background: #f5f0e8;
-    color: #073f3d;
-}
-
-.arrow {
-    font-size: 29px;
-    color: #c76e4c;
-}
-
-/* Benefits section */
-
-.welcome-benefits {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 55px;
-    width: 100%;
-}
-
-.benefit {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-    font-size: 17px;
-    line-height: 1.5;
-    text-align: left;
-}
-
-.benefit-icon {
-    width: 42px;
-    height: 42px;
-    min-width: 42px;
-    stroke-width: 1.6;
-    color: #f5f0e8;
-}
-
-.benefit-divider {
-    height: 45px;
-    width: 1px;
-    background: rgba(245, 240, 232, 0.4);
-}
-
-/* Mobile responsive */
-
-@media (max-width: 600px) {
-
-    .welcome-content {
-        padding: 25px 15px;
-    }
-
-    .welcome-logo-image {
-        width: 300px;
-    }
-
-    .welcome-tagline {
-        font-size: 19px;
-        margin-bottom: 28px;
-        margin: -20px 0 35px;
-    }
-
-    .get-started-btn {
-        width: 210px;
-        min-height: 52px;
-        font-size: 16px;
-    }
-
-    .welcome-benefits {
-        gap: 10px;
-        margin-top: 40px;
-    }
-
-    .benefit {
-        font-size: 10px;
-        gap: 5px;
-    }
-
-    .benefit-icon {
-        font-size: 20px;
-    }
-
-    .benefit-divider {
-        height: 30px;
-    }
-}
+.welcome-page,.welcome-page *{box-sizing:border-box}
+.welcome-page{position:relative;display:flex;align-items:center;justify-content:center;width:100%;min-height:100vh;min-height:100svh;overflow:hidden;background:#073f3d;color:#f5f0e8;font-family:Inter,"Noto Sans Sinhala",system-ui,sans-serif;text-align:center}
+.welcome-art{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.welcome-art-backdrop{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.welcome-glass{position:absolute;display:block;height:auto;pointer-events:none}
+.welcome-glass-top{top:0;left:0;width:clamp(210px,26vw,520px)}
+.welcome-glass-bottom{right:0;bottom:0;width:clamp(230px,27vw,540px)}
+.welcome-content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;min-height:100vh;padding:clamp(28px,4vh,60px) 24px;margin:0 auto}
+.welcome-logo{display:flex;align-items:center;justify-content:center;margin:0}
+.welcome-logo-image{display:block;width:clamp(260px,29vw,540px);max-width:82vw;height:auto;object-fit:contain}
+.welcome-tagline{margin:clamp(14px,2vh,28px) 0 clamp(32px,4.5vh,62px);color:#f5f0e8;font-size:clamp(22px,2.35vw,48px);font-weight:550;line-height:1.25;letter-spacing:-.02em}
+.welcome-tagline span{color:#c76e4c}
+.get-started-btn{display:block;width:clamp(260px,22vw,460px);padding:0;border:0;border-radius:999px;background:transparent;cursor:pointer;transition:transform .18s,filter .18s}
+.get-started-btn img{display:block;width:100%;height:auto}
+.get-started-btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.get-started-btn:focus-visible{outline:3px solid #c76e4c;outline-offset:6px}
+.welcome-benefits{display:block;width:clamp(430px,42vw,820px);max-width:88vw;height:auto;margin-top:clamp(40px,6vh,82px)}
+@media(max-width:700px){.welcome-content{padding:34px 18px}.welcome-logo-image{width:min(78vw,340px)}.welcome-tagline{max-width:92vw;margin:18px 0 32px;font-size:clamp(20px,5vw,28px)}.get-started-btn{width:min(70vw,300px)}.welcome-benefits{width:94vw;margin-top:42px}.welcome-glass-top{width:42vw}.welcome-glass-bottom{width:44vw}}
+@media(max-height:760px) and (min-width:701px){.welcome-content{padding-top:20px;padding-bottom:20px}.welcome-logo-image{width:clamp(220px,24vw,370px)}.welcome-tagline{margin:10px 0 22px;font-size:clamp(20px,2vw,34px)}.get-started-btn{width:clamp(220px,19vw,340px)}.welcome-benefits{width:clamp(390px,38vw,620px);margin-top:28px}}
