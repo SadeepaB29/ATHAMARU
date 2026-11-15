@@ -67,7 +67,7 @@
 .auth-art-copy {
   max-width: 490px;
   margin-top: auto;
-  margin-bottom: clamp(70px, 12vh, 150px);
+  margin-bottom: clamp(170px, 24vh, 250px);
   text-shadow: 0 2px 20px rgba(0, 0, 0, .18);
 }
 
