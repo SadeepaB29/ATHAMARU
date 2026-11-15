@@ -519,9 +519,13 @@
   text-decoration: none;
 }
 
-/* The Sign Up Figma frame uses a slightly narrower artwork column. */
+/* Match the proportions and warm neutral surface of the Sign Up Figma frame. */
 .auth-page-signup {
   grid-template-columns: 48.46% 51.54%;
+}
+
+.auth-page-signup .auth-form-panel {
+  background: #eeece5;
 }
 
 /* Sign-up follows the supplied Create Account Figma frame. */
