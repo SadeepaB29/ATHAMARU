@@ -1,28 +1,42 @@
 import React, { useState } from 'react';
-import {
-  ArrowRight,
-  Eye,
-  EyeOff,
-  LockKeyhole,
-  Mail,
-  UserRound,
-} from 'lucide-react';
+import { ArrowRight, Eye, EyeOff, LockKeyhole, Mail, UserRound } from 'lucide-react';
 import './AuthPage.css';
-
-import signInArtwork from './assets/designsandbackgrounds/athamaru-sign-in-background.jpg';
-import signUpArtwork from './assets/designsandbackgrounds/athamaru-create-account-background.jpg';
+import athamaruLogo from './assets/designsandbackgrounds/Athamaru logo with transparent background.png';
+import athamaruMark from './assets/designsandbackgrounds/Athamaru logo without name.png';
+import googleLogo from './assets/Google.png';
+import signInBackdrop from './assets/designsandbackgrounds/athamaru-figma-layers/sign-in/01-clean-teal-backdrop.png';
+import signInGlassTop from './assets/designsandbackgrounds/Sign In/02-glass-top-left 1.png';
+import signInObjects from './assets/designsandbackgrounds/Sign In/03-objects-and-wood-table 1.png';
+import signInGlassBottom from './assets/designsandbackgrounds/Sign In/04-glass-bottom-right 1.png';
+import signUpBackdrop from './assets/designsandbackgrounds/athamaru-figma-layers/create-account/01-clean-teal-backdrop.png';
+import signUpGlassTop from './assets/designsandbackgrounds/Sign Up/Copper-stitched frosted sea glass 1.png';
+import signUpGlassLeftBack from './assets/designsandbackgrounds/Sign Up/Copper-stitched frosted sea glass 2.png';
+import signUpGlassLeftFront from './assets/designsandbackgrounds/Sign Up/Copper-stitched frosted sea glass 3.png';
+import signUpGlassRight from './assets/designsandbackgrounds/Sign Up/Pale Sea Glass Arc Segment-3 1.png';
+import signUpObjects from './assets/designsandbackgrounds/Sign Up/Vintage camera, books, plant, and headphones 1.png';
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-function Brand({ layout = 'stacked', onClick }) {
+function Brand({ layout = 'signin', onClick }) {
   return (
-    <button className={`auth-brand auth-brand-${layout}`} type="button" onClick={onClick} aria-label="ATHAMARU home">
-      <span className="auth-brand-symbol" aria-hidden="true">
-        <span />
-        <span />
-      </span>
-      <span className="auth-brand-word">athamaru</span>
-    </button>
+    <a
+      className={`auth-brand auth-brand-${layout}`}
+      href="#/"
+      onClick={(event) => {
+        event.preventDefault();
+        onClick();
+      }}
+      aria-label="ATHAMARU home"
+    >
+      {layout === 'signup' ? (
+        <>
+          <span className="auth-brand-mark"><img src={athamaruMark} alt="" /></span>
+          <span className="auth-brand-word">athamaru</span>
+        </>
+      ) : (
+        <img src={athamaruLogo} alt="ATHAMARU" />
+      )}
+    </a>
   );
 }
 
@@ -46,7 +60,7 @@ function InputField({ id, label, placeholder, icon: Icon, value, onChange, type 
         />
         {onTogglePassword && (
           <button className="auth-visibility-btn" type="button" onClick={onTogglePassword} aria-label={showPassword ? 'Hide password' : 'Show password'}>
-            {showPassword ? <Eye size={22} /> : <EyeOff size={22} />}
+            {showPassword ? <EyeOff size={22} strokeWidth={1.7} /> : <Eye size={22} strokeWidth={1.7} />}
           </button>
         )}
       </div>
@@ -58,9 +72,30 @@ function InputField({ id, label, placeholder, icon: Icon, value, onChange, type 
 function GoogleButton({ onClick }) {
   return (
     <button className="auth-google-btn" type="button" onClick={onClick}>
-      <span className="auth-google-g" aria-hidden="true">G</span>
+      <img className="auth-google-icon" src={googleLogo} alt="" aria-hidden="true" />
       <span>Continue with Google</span>
     </button>
+  );
+}
+
+function ArtworkLayers({ mode }) {
+  if (mode === 'signup') return (
+    <div className="auth-art-layer-stack auth-art-layer-stack-signup" aria-hidden="true">
+      <img className="auth-art-layer auth-art-backdrop" src={signUpBackdrop} alt="" />
+      <img className="auth-signup-glass auth-signup-glass-top" src={signUpGlassTop} alt="" />
+      <img className="auth-signup-glass auth-signup-glass-left-back" src={signUpGlassLeftBack} alt="" />
+      <img className="auth-signup-glass auth-signup-glass-right" src={signUpGlassRight} alt="" />
+      <img className="auth-signup-objects" src={signUpObjects} alt="" />
+      <img className="auth-signup-glass auth-signup-glass-left-front" src={signUpGlassLeftFront} alt="" />
+    </div>
+  );
+  return (
+    <div className="auth-art-layer-stack auth-art-layer-stack-signin" aria-hidden="true">
+      <img className="auth-art-layer auth-art-backdrop" src={signInBackdrop} alt="" />
+      <img className="auth-art-layer" src={signInGlassTop} alt="" />
+      <img className="auth-art-layer" src={signInObjects} alt="" />
+      <img className="auth-art-layer" src={signInGlassBottom} alt="" />
+    </div>
   );
 }
 
@@ -112,14 +147,11 @@ export default function AuthPage({ mode = 'signin', onNavigate }) {
 
   return (
     <main className={`auth-page ${isSignUp ? 'auth-page-signup' : 'auth-page-signin'}`}>
-      <section
-        className="auth-art-panel"
-        style={{ backgroundImage: `url("${isSignUp ? signUpArtwork : signInArtwork}")` }}
-        aria-label="ATHAMARU marketplace"
-      >
+      <section className="auth-art-panel" aria-label="ATHAMARU marketplace">
+        <ArtworkLayers mode={isSignUp ? 'signup' : 'signin'} />
         {isSignUp ? (
           <>
-            <Brand layout="horizontal" onClick={() => onNavigate('welcome')} />
+            <Brand layout="signup" onClick={() => onNavigate('welcome')} />
             <div className="auth-art-copy auth-art-copy-signup">
               <h2>Your next<br />chapter<br />starts here.</h2>
               <p>Join Sri Lanka’s circular marketplace to buy, sell, swap, rent, donate and extend the life of useful things.</p>
@@ -127,7 +159,7 @@ export default function AuthPage({ mode = 'signin', onNavigate }) {
           </>
         ) : (
           <>
-            <Brand layout="stacked" onClick={() => onNavigate('welcome')} />
+            <Brand layout="signin" onClick={() => onNavigate('welcome')} />
             <div className="auth-art-copy auth-art-copy-signin">
               <h2>Another find.<br />Another beginning.</h2>
               <p>Good things deserve another life.</p>
@@ -176,7 +208,7 @@ export default function AuthPage({ mode = 'signin', onNavigate }) {
 
             <button className="auth-submit-btn" type="submit">
               <span>{isSignUp ? 'Create account' : 'Log in'}</span>
-              <ArrowRight size={25} strokeWidth={1.7} aria-hidden="true" />
+              <ArrowRight className="auth-submit-arrow" size={30} strokeWidth={1.45} aria-hidden="true" />
             </button>
           </form>
 
