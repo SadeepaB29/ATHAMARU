@@ -9,20 +9,26 @@ import {
 } from 'lucide-react';
 import './AuthPage.css';
 
-import signInArtwork from './assets/designsandbackgrounds/athamaru-sign-in-background.jpg';
-import signUpArtwork from './assets/designsandbackgrounds/athamaru-create-account-background.jpg';
+import athamaruLogo from './assets/designsandbackgrounds/Athamaru logo with transparent background.png';
+import googleLogo from './assets/designsandbackgrounds/google-g.svg';
+import signInArtwork from './assets/designsandbackgrounds/Backgrounds/sign-in-left-background-2x.jpg';
+import signUpArtwork from './assets/designsandbackgrounds/Backgrounds/create-account-left-background-2x.jpg';
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-function Brand({ layout = 'stacked', onClick }) {
+function Brand({ layout = 'signin', onClick }) {
   return (
-    <button className={`auth-brand auth-brand-${layout}`} type="button" onClick={onClick} aria-label="ATHAMARU home">
-      <span className="auth-brand-symbol" aria-hidden="true">
-        <span />
-        <span />
-      </span>
-      <span className="auth-brand-word">athamaru</span>
-    </button>
+    <a
+      className={`auth-brand auth-brand-${layout}`}
+      href="#/"
+      onClick={(event) => {
+        event.preventDefault();
+        onClick();
+      }}
+      aria-label="ATHAMARU home"
+    >
+      <img src={athamaruLogo} alt="ATHAMARU" />
+    </a>
   );
 }
 
@@ -46,7 +52,7 @@ function InputField({ id, label, placeholder, icon: Icon, value, onChange, type 
         />
         {onTogglePassword && (
           <button className="auth-visibility-btn" type="button" onClick={onTogglePassword} aria-label={showPassword ? 'Hide password' : 'Show password'}>
-            {showPassword ? <Eye size={22} /> : <EyeOff size={22} />}
+            {showPassword ? <EyeOff size={22} strokeWidth={1.7} /> : <Eye size={22} strokeWidth={1.7} />}
           </button>
         )}
       </div>
@@ -58,7 +64,7 @@ function InputField({ id, label, placeholder, icon: Icon, value, onChange, type 
 function GoogleButton({ onClick }) {
   return (
     <button className="auth-google-btn" type="button" onClick={onClick}>
-      <span className="auth-google-g" aria-hidden="true">G</span>
+      <img className="auth-google-icon" src={googleLogo} alt="" aria-hidden="true" />
       <span>Continue with Google</span>
     </button>
   );
@@ -119,7 +125,7 @@ export default function AuthPage({ mode = 'signin', onNavigate }) {
       >
         {isSignUp ? (
           <>
-            <Brand layout="horizontal" onClick={() => onNavigate('welcome')} />
+            <Brand layout="signup" onClick={() => onNavigate('welcome')} />
             <div className="auth-art-copy auth-art-copy-signup">
               <h2>Your next<br />chapter<br />starts here.</h2>
               <p>Join Sri Lanka’s circular marketplace to buy, sell, swap, rent, donate and extend the life of useful things.</p>
@@ -127,7 +133,7 @@ export default function AuthPage({ mode = 'signin', onNavigate }) {
           </>
         ) : (
           <>
-            <Brand layout="stacked" onClick={() => onNavigate('welcome')} />
+            <Brand layout="signin" onClick={() => onNavigate('welcome')} />
             <div className="auth-art-copy auth-art-copy-signin">
               <h2>Another find.<br />Another beginning.</h2>
               <p>Good things deserve another life.</p>
@@ -176,7 +182,7 @@ export default function AuthPage({ mode = 'signin', onNavigate }) {
 
             <button className="auth-submit-btn" type="submit">
               <span>{isSignUp ? 'Create account' : 'Log in'}</span>
-              <ArrowRight size={25} strokeWidth={1.7} aria-hidden="true" />
+              <ArrowRight className="auth-submit-arrow" size={30} strokeWidth={1.45} aria-hidden="true" />
             </button>
           </form>
 
