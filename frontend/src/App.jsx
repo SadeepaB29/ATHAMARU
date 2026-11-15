@@ -1,8 +1,33 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Welcome from './Welcome';
+import AuthPage from './AuthPage';
+
+function getScreenFromHash() {
+  if (window.location.hash === '#/sign-up') return 'signup';
+  if (window.location.hash === '#/sign-in') return 'signin';
+  return 'welcome';
+}
 
 export default function App() {
+  const [authScreen, setAuthScreen] = useState(getScreenFromHash);
+
+  useEffect(() => {
+    const syncScreen = () => setAuthScreen(getScreenFromHash());
+    window.addEventListener('hashchange', syncScreen);
+    return () => window.removeEventListener('hashchange', syncScreen);
+  }, []);
+
+  const navigate = (nextScreen) => {
+    const hash = nextScreen === 'signup'
+      ? '#/sign-up'
+      : nextScreen === 'signin'
+        ? '#/sign-in'
+        : '';
+    if (window.location.hash !== hash) window.location.hash = hash;
+    setAuthScreen(nextScreen);
+  };
+
   const [step, setStep] = useState(1);
   const [showWelcome, setShowWelcome] = useState(true);
   const [formData, setFormData] = useState({
@@ -12,6 +37,10 @@ export default function App() {
     location: 'Colombo',
     interest: 'Thrift (Buy pre-owned goods)'
   });
+
+  if (authScreen !== 'welcome') {
+    return <AuthPage mode={authScreen} onNavigate={navigate} />;
+  }
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -28,7 +57,7 @@ export default function App() {
   };
 
   if (showWelcome) {
-    return <Welcome />;
+    return <Welcome onGetStarted={() => navigate('signin')} />;
   }
 
   return (

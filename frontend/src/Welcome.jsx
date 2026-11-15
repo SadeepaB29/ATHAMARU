@@ -1,8 +1,8 @@
 import React from 'react';
 import './Welcome.css';
-import athamaruLogo from './assets/designsandbackgrounds/athamaru logo with transparent background.png';
+import athamaruLogo from './assets/designsandbackgrounds/Athamaru logo with transparent background.png';
 import { Recycle, UsersRound, Leaf } from 'lucide-react';
-export default function Welcome() {
+export default function Welcome({ onGetStarted }) {
     return (
         <main className="welcome-page">
 
@@ -23,7 +23,7 @@ export default function Welcome() {
                 </p>
 
                 {/* GET STARTED BUTTON */}
-                <button className="get-started-btn" type="button">
+                <button className="get-started-btn" type="button" onClick={onGetStarted}>
                     <span>Get started</span>
                     <span className="arrow">→</span>
                 </button>
