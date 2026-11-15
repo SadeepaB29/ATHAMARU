@@ -71,3 +71,52 @@
 @media(max-width:900px){.auth-page{grid-template-columns:minmax(0,50%) minmax(0,50%)}.auth-form-panel{padding:28px 26px}.auth-form-container{max-width:100%}.auth-art-copy{left:9%;right:6%}.auth-art-copy-signup h2{font-size:clamp(36px,4.6vw,52px)}.auth-brand-signup{left:9%;gap:12px}.auth-brand-mark{flex-basis:58px;width:58px;height:58px}.auth-brand-word{font-size:clamp(30px,4vw,42px)}}
 @media(max-width:680px){.auth-page{display:flex;flex-direction:column;overflow:visible}.auth-art-panel{min-height:390px;height:43vh;flex:0 0 auto}.auth-brand-signin{top:18px;width:130px}.auth-brand-signup{top:18px;left:8%;width:160px}.auth-art-copy-signin,.auth-art-copy-signup{top:auto;bottom:22px}.auth-art-copy h2{font-size:clamp(32px,8vw,44px)}.auth-art-copy-signup h2{font-size:clamp(38px,9vw,52px)}.auth-art-copy p{font-size:16px}.auth-form-panel{min-height:auto;padding:38px 24px 44px}.auth-form-container{max-width:540px;margin:0 auto}.auth-heading h1{font-size:clamp(34px,9vw,46px)}.auth-heading p{font-size:17px}.auth-heading{margin-bottom:26px}.auth-form{gap:16px}.auth-input-wrap,.auth-input-wrap input{min-height:58px}.auth-input-wrap input{font-size:16px}.auth-input-icon{width:24px;height:24px}.auth-checkbox-label,.auth-text-link,.auth-switch,.auth-switch button{font-size:14px}.auth-submit-btn{min-height:60px;font-size:18px}.auth-divider{margin:23px 0 16px;font-size:15px}.auth-google-btn{min-height:56px;font-size:15px}.auth-switch{margin-top:22px}.auth-page-signup .auth-form{gap:12px}.auth-page-signup .auth-input-wrap{min-height:52px}.auth-page-signup .auth-label{font-size:15px}.auth-signup-objects{height:55%}}
 @media(max-height:760px) and (min-width:681px){.auth-heading{margin-bottom:20px}.auth-page-signup .auth-heading{margin-bottom:12px}.auth-form{gap:12px}.auth-page-signup .auth-form{gap:8px}.auth-input-wrap{min-height:54px}.auth-page-signup .auth-input-wrap{min-height:44px}.auth-submit-btn{min-height:58px}.auth-page-signup .auth-submit-btn{min-height:54px}.auth-divider{margin:17px 0 13px}.auth-switch,.auth-page-signup .auth-switch{margin-top:18px}}
+
+
+/* Final Figma alignment pass: keep every exported artwork layer inside its panel. */
+.auth-page-signin{grid-template-columns:minmax(0,49.6fr) minmax(0,50.4fr)}
+.auth-page-signup{grid-template-columns:minmax(0,48.2fr) minmax(0,51.8fr)}
+.auth-form-panel{border-left:1px solid rgba(87,103,95,.18)}
+.auth-art-panel{min-height:100svh}
+.auth-art-layer-stack-signin .auth-art-layer{inset:0;width:100%;height:100%;object-fit:fill;object-position:center}
+.auth-brand-signin{top:6%;width:clamp(205px,19vw,300px)}
+.auth-art-copy-signin{top:39%;left:13.5%;right:6%}
+.auth-art-copy-signin h2{font-size:clamp(46px,3.8vw,66px);line-height:.99;letter-spacing:-.045em}
+.auth-art-copy-signin p{font-size:clamp(20px,1.75vw,31px)}
+.auth-brand-signup{top:5.2%;left:14%;gap:16px}
+.auth-brand-mark{flex-basis:clamp(76px,5.8vw,92px);width:clamp(76px,5.8vw,92px);height:clamp(76px,5.8vw,92px);overflow:visible}
+.auth-brand-mark img{display:block;width:100%;height:100%;object-fit:contain}
+.auth-brand-word{font-size:clamp(40px,3.15vw,54px);white-space:nowrap}
+.auth-art-copy-signup{top:18.5%;left:14%;right:7%;max-width:590px}
+.auth-art-copy-signup h2{font-size:clamp(48px,4.05vw,78px);line-height:.96;letter-spacing:-.055em;margin:0 0 clamp(16px,1.6vw,26px)}
+.auth-art-copy-signup p{max-width:450px;font-size:clamp(19px,1.75vw,29px);line-height:1.28}
+.auth-signup-glass-top{top:0;right:0;width:46%}
+.auth-signup-glass-left-back{left:0;bottom:0;width:39%}
+.auth-signup-glass-right{right:0;bottom:0;width:53%}
+.auth-signup-objects{left:0;bottom:0;width:100%;height:53%;object-fit:contain;object-position:center bottom}
+.auth-signup-glass-left-front{left:0;bottom:0;width:34%}
+.auth-page-signup .auth-form-container{width:min(100%,610px);max-width:610px}
+.auth-page-signup .auth-heading h1{font-size:clamp(42px,3.25vw,64px);line-height:1.06}
+.auth-page-signup .auth-heading p{font-size:clamp(19px,1.55vw,29px)}
+.auth-page-signup .auth-label{font-size:clamp(17px,1.25vw,24px)}
+.auth-page-signup .auth-input-wrap{min-height:clamp(54px,3.75vw,66px)}
+.auth-page-signup .auth-input-wrap input{font-size:clamp(17px,1.3vw,24px)}
+.auth-page-signup .auth-form{gap:clamp(11px,1vw,18px)}
+.auth-page-signup .auth-submit-btn{min-height:clamp(62px,4.7vw,78px)}
+.auth-page-signup .auth-terms .auth-checkbox-label{font-size:clamp(15px,1.08vw,20px)}
+@media(max-width:900px) and (min-width:681px){
+ .auth-page-signin{grid-template-columns:minmax(0,49.6fr) minmax(0,50.4fr)}
+ .auth-page-signup{grid-template-columns:minmax(0,48.2fr) minmax(0,51.8fr)}
+ .auth-brand-signup{left:8%;gap:10px}
+ .auth-brand-mark{flex-basis:58px;width:58px;height:58px}
+ .auth-brand-word{font-size:clamp(29px,3.8vw,38px)}
+ .auth-art-copy-signup{left:8%;top:20%}
+ .auth-art-copy-signup h2{font-size:clamp(38px,4.8vw,52px)}
+ .auth-art-copy-signup p{font-size:clamp(16px,2vw,20px)}
+}
+@media(max-width:680px){
+ .auth-page-signin,.auth-page-signup{display:flex;flex-direction:column}
+ .auth-form-panel{border-left:0;border-top:1px solid rgba(87,103,95,.18)}
+ .auth-brand-signup{left:8%;top:18px}
+ .auth-art-copy-signup{left:8%;top:auto;bottom:22px}
+}
