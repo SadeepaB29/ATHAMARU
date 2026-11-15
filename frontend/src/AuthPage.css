@@ -16,10 +16,10 @@
 .auth-signup-glass-left-front{z-index:4;left:-13%;bottom:-15%;width:37%}
 .auth-brand{position:absolute;z-index:5;display:block;text-decoration:none}
 .auth-brand img{display:block;width:100%;height:auto;object-fit:contain}
-.auth-brand-signin{top:5.5%;left:50%;width:clamp(175px,18vw,290px);transform:translateX(-50%)}
+.auth-brand-signin{top:5.2%;left:50%;width:clamp(190px,19.5vw,315px);transform:translateX(-50%)}
 .auth-brand-signup{top:5.5%;left:14%;display:flex;align-items:center;gap:18px;width:auto;color:var(--ath-surface)}
-.auth-brand-mark{display:block;flex:0 0 76px;width:76px;height:76px;overflow:hidden}
-.auth-brand-mark img{width:100%;height:100%;object-fit:cover;object-position:center 15%}
+.auth-brand-mark{display:block;flex:0 0 clamp(82px,6.3vw,100px);width:clamp(82px,6.3vw,100px);height:clamp(72px,5.8vw,92px);overflow:hidden}
+.auth-brand-mark img{width:100%;height:100%;object-fit:contain;object-position:center}
 .auth-brand-word{color:var(--ath-surface);font-size:clamp(38px,3.2vw,54px);font-weight:750;letter-spacing:-.045em;line-height:1}
 .auth-art-copy{position:absolute;z-index:5;left:13.5%;right:6%;max-width:680px;margin:0;color:var(--ath-surface);text-shadow:0 2px 18px rgba(0,0,0,.16)}
 .auth-art-copy-signin{top:39%}.auth-art-copy-signup{top:17.2%}
