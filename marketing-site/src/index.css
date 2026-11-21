@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  /* Official ATHAMARU Colour Tokens (Developer & Design Guidelines Section 4.2) */
+  --color-primary: #163d3b;
+  --color-primary-dark: #0f2e2c;
+  --color-accent: #b96c4a;
+  --color-accent-dark: #8b452d;
+  --color-bg: #eeece5;
+  --color-surface: #f5f0e8;
+  --color-surface-alt: #b8cec5;
+  --color-ink: #25302d;
+  --color-ink-muted: #5d6863;
+  --color-line: #d4d8d0;
+  --color-line-input: #73847c;
+  --color-success: #28734d;
+  --color-warning: #d5a43b;
+  --color-danger: #b43d3d;
+
+  /* Authentic macOS Window Controls (for Prototype Browser Preview only) */
+  --color-mac-red: #ff5f56;
+  --color-mac-yellow: #ffbd2e;
+  --color-mac-green: #27c93f;
+
+  /* Official Typography Stack (Section 3.1) */
+  --font-sans: "Inter", "Noto Sans Sinhala", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-padding-top: 5rem;
+  }
+
+  /* WCAG 2.2 AA Focus Ring: 2px Deep Teal with 2px offset (Section 4.3 & 7) */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--color-primary-dark);
+    outline-offset: 2px;
+  }
+
+  /* Respect prefers-reduced-motion (Section 7) */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
