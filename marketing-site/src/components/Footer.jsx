@@ -97,7 +97,7 @@ const QUICK_LINKS = [
                 {/* Social Icons (Instagram + TikTok) Right-Aligned with 44x44px Targets */}
                 <div className="mt-4 flex items-center gap-3 md:justify-end">
                 <a
-                    href="https://www.instagram.com"
+                    href="https://www.instagram.com/athamaru?lqvp=MTBlb2M4djJhamxqMg=="
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Follow ATHAMARU on Instagram"
@@ -106,7 +106,7 @@ const QUICK_LINKS = [
                     <Instagram className="h-5 w-5" aria-hidden="true" />
                 </a>
                 <a
-                    href="https://www.tiktok.com"
+                    href="https://www.tiktok.com/@athamaru.lk?_r=1&_t=ZS-9Bc3zqCwUMO"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Follow ATHAMARU on TikTok"
